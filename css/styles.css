@@ -79,12 +79,34 @@ ul {
   color: var(--text-light);
   padding: 0.5rem 0;
   position: relative;
+  /* Add overflow hidden so underline animation stays within link */
+  overflow: hidden;
   transition: opacity 0.2s;
+  /* Smooth color change when hovering */
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
   opacity: 0.8;
+}
+
+/* Animated underline for menu items */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: translateX(0);
 }
 
 /* Hero */
