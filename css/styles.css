@@ -166,6 +166,39 @@ ul {
   border-radius: 12px;
 }
 
+/* Hero text slider */
+.hero-text {
+  position: relative;
+}
+
+/* Container for sliding text: display as flex so slides align horizontally */
+.hero-slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Each slide takes full width of its container */
+.hero-slide {
+  min-width: 100%;
+}
+
+/* Ensure headings and paragraphs inside hero slides don't shrink */
+.hero-slide h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-slide p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 550px;
+}
+
+/* CTA button inside hero text section */
+.cta-hero {
+  margin-top: 1.5rem;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
