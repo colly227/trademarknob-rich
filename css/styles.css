@@ -81,14 +81,28 @@ ul {
   position: relative;
   /* Add overflow hidden so underline animation stays within link */
   overflow: hidden;
-  transition: opacity 0.2s;
-  /* Smooth color change when hovering */
   transition: color 0.2s ease, opacity 0.2s ease;
+  /* Ensure inline-block so bounce transform affects each link */
+  display: inline-block;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
   opacity: 0.8;
+}
+
+/* Add bounce animation to menu items on hover */
+.main-nav a:hover {
+  animation: nav-bounce 0.4s ease;
+}
+
+@keyframes nav-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 /* Animated underline for menu items */
