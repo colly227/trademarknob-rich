@@ -192,8 +192,13 @@ ul {
 }
 
 /* Ensure headings and paragraphs inside hero slides don't shrink */
+/*
+ * Reduce the size of the hero slider headings so they don’t crowd the layout.
+ * A smaller heading fits better alongside the hero image on large screens,
+ * and the size is further reduced on small screens via the media query below.
+ */
 .hero-slide h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
@@ -437,6 +442,11 @@ ul {
 @media (max-width: 768px) {
   .slider-btn.prev, .slider-btn.next {
     display: none;
+  }
+
+  /* On small screens, shrink hero slider headings further to improve fit */
+  .hero-slide h1 {
+    font-size: 2rem;
   }
 }
 
