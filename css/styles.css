@@ -9,6 +9,94 @@
   --text-light: #ffffff;
 }
 
+/* -----------------------------------------------------------------------------
+ * Contact and Legal Sections
+ *
+ * These styles format the new contact form and the Terms & Conditions, Privacy
+ * Policy and Cookie Policy sections. The contact section uses a light
+ * background and straightforward form styling. The legal sections share the
+ * same spacing and typography to ensure readability.
+ */
+
+.contact {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+/* Center the contact form container and limit its width for better layout */
+.contact .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  /* Make the button larger and centered */
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  display: block;
+}
+
+/* Responsive adjustments for the contact section */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+  .contact p {
+    font-size: 1rem;
+  }
+  .contact .container {
+    padding: 0 1rem;
+  }
+}
+
+.legal {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.legal h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
