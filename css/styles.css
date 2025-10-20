@@ -184,6 +184,11 @@ ul {
   display: flex;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
+  /* Ensure the slider retains enough height so that subsequent
+     slides don't cause the container to collapse when they slide
+     horizontally. 200px provides room for the heading and
+     paragraph without pushing the hero image out of alignment. */
+  min-height: 200px;
 }
 
 /* Each slide takes full width of its container */
