@@ -25,7 +25,7 @@
 
 /* Center the contact form container and limit its width for better layout */
 .contact .container {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -59,6 +59,12 @@
 
 .contact-form textarea {
   resize: vertical;
+}
+
+/* Limit the width of the form itself and center it within the contact section */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact-form button {
