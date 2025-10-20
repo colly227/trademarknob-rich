@@ -64,11 +64,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', setActiveLink);
   setActiveLink();
-});
-// Initialize tilt effect on service cards
-VanillaTilt.init(document.querySelectorAll('.service-item'), {
-  max: 20,
-  speed: 400,
-  glare: true,
-  'max-glare': 0.3
+
+  /* Apply interactive tilt effect to service cards when VanillaTilt is available */
+  if (typeof VanillaTilt !== 'undefined') {
+    const serviceCards = document.querySelectorAll('.service-item');
+    // Initialize vanilla tilt with subtle 3D effect
+    VanillaTilt.init(serviceCards, {
+      max: 15,
+      speed: 400,
+      scale: 1.05,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  }
+
+  /* Hero text slider */
+  const heroSlider = document.getElementById('hero-slider');
+  if (heroSlider) {
+    const heroSlides = heroSlider.querySelectorAll('.hero-slide');
+    let heroIndex = 0;
+    // function to update slide position
+    function updateHero() {
+      heroSlider.style.transform = `translateX(-${heroIndex * 100}%)`;
+    }
+    // automatically change slide every 5 seconds
+    setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      updateHero();
+    }, 5000);
+  }
 });
