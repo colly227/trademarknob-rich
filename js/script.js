@@ -78,19 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* Hero text slider */
+  /* Hero text slider
+   * Instead of sliding horizontally (which caused layout issues),
+   * cycle through each slide by toggling the display property. This
+   * keeps the container height consistent and prevents the hero image
+   * from being pushed out of place on subsequent slides.
+   */
   const heroSlider = document.getElementById('hero-slider');
   if (heroSlider) {
-    const heroSlides = heroSlider.querySelectorAll('.hero-slide');
+    const heroSlides = Array.from(heroSlider.querySelectorAll('.hero-slide'));
     let heroIndex = 0;
-    // function to update slide position
-    function updateHero() {
-      heroSlider.style.transform = `translateX(-${heroIndex * 100}%)`;
+    // Show only the current slide
+    function showHero() {
+      heroSlides.forEach((slide, idx) => {
+        slide.style.display = idx === heroIndex ? 'block' : 'none';
+      });
     }
-    // automatically change slide every 5 seconds
+    // Initialize the first slide
+    showHero();
+    // Cycle through slides every 5 seconds
     setInterval(() => {
       heroIndex = (heroIndex + 1) % heroSlides.length;
-      updateHero();
+      showHero();
     }, 5000);
   }
 });
