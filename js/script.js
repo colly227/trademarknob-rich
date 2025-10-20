@@ -65,3 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', setActiveLink);
   setActiveLink();
 });
+// Initialize tilt effect on service cards
+VanillaTilt.init(document.querySelectorAll('.service-item'), {
+  max: 20,
+  speed: 400,
+  glare: true,
+  'max-glare': 0.3
+});
