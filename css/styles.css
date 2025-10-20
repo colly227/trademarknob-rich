@@ -181,7 +181,10 @@ ul {
  * to the available width of the hero text area.
  */
 .hero-slider {
-  display: flex;
+  /* Use block layout rather than flex for the hero slider. When only one
+     slide is shown at a time, flexbox isn’t needed and it can lead to
+     width calculations that collapse the container. */
+  display: block;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
   /* Ensure the slider retains enough height so that subsequent
@@ -194,6 +197,14 @@ ul {
 /* Each slide takes full width of its container */
 .hero-slide {
   min-width: 100%;
+  /* Hide all slides by default; the first slide will be shown via CSS
+     and subsequent slides are displayed by JavaScript. */
+  display: none;
+}
+
+/* Show the first hero slide on page load before JavaScript initializes */
+.hero-slide:first-child {
+  display: block;
 }
 
 /* Ensure headings and paragraphs inside hero slides don't shrink */
